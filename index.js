@@ -14,7 +14,7 @@ hour.textContent = "00"
 
 
 let intervalFun = function() {
-    secValue += 0;
+    secValue += 1;
     if(secValue)
     if(secValue < 10) {
         second.textContent = "0" + secValue 
@@ -56,7 +56,7 @@ start.addEventListener("click", (e) => {
         e.target.textContent = "Resume"
         clearInterval(id)
     } else if(e.target.textContent === "Resume") {
-        e.target.textContent = "Start"
+        e.target.textContent = "Pause"
         id = setInterval(intervalFun, 1000)
     }
 })
@@ -72,15 +72,6 @@ reset.addEventListener("click", (e) => {
     start.textContent = "Start"
 })
 
-
-var tl = gsap.timeline()
-// tl.from(".box", {
-//     y: -200,
-//     duration: 0.5,
-//     opacity: 0,
-//     stagger: 1,
-//     // rotation: 360,
-// })
 
 gsap.from("#hour", {
     x: -100,
