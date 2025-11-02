@@ -5,36 +5,43 @@ let start = document.getElementById("start")
 let reset = document.getElementById("reset")
 
 let secValue = 0;
-let minValue = 0;
+let minValue = 50;
 let hourValue = 0;
+
+second.textContent = "00"
+minute.textContent = "00"
+hour.textContent = "00"
 
 
 let intervalFun = function() {
-    secValue += 1;
-    if(secValue == 60) secValue = 0;
-    if(minValue == 60) minValue = 0;
+    secValue += 60;
+    if(secValue)
     if(secValue < 10) {
         second.textContent = "0" + secValue 
     } else {
         second.textContent = secValue
     }
 
-    if(secValue % 60 === 0) {
-        minValue = secValue / 60;
+    if(secValue === 60) {
+        minValue++;
         if(minValue < 10) {
             minute.textContent = "0" + minValue
         } else {
             minute.textContent = minValue
         }
+        secValue = 0;
+        second.textContent = "0" + secValue
     }
 
-    if(minValue % 60 === 0) {
-        hourValue = minValue / 60;
+    if(minValue === 60) {
+        hourValue++;
         if(hourValue < 10) {
             hour.textContent = "0" + hourValue
         } else {
             hour.textContent = hourValue
         }
+        minValue = 0;
+        minute.textContent = "0" + minValue
     }
 }
 
