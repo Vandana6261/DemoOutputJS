@@ -34,3 +34,41 @@ setInterval(function () {
   }
 }, 1000);
 
+// setInterval(function () {
+//   if (date.getMinutes() < 10) {
+//     minute.textContent = "0" + date.getMinutes();
+//   } else {
+//     minute.textContent = date.getMinutes();
+//   }
+// }, 1000 * 60);
+
+// setInterval(function () {
+//   if (date.getHours() < 10) {
+//     hour.textContent = "0" + date.getHours();
+//   } else {
+//     hour.textContent = date.getHours();
+//   }
+// }, 1000 * 60 * 60);
+
+
+
+
+
+gsap.to("#hour", {
+    x: -200,
+    duration: 0.6,
+    repeat: 1,
+    yoyo: true
+})
+gsap.to("#minute", {
+    y: -200,
+    duraion: 0.6,
+    repeat: 1,
+    yoyo: true
+})
+gsap.to("#second", {
+    x: 200,
+    duration: 0.6,
+    repeat: 1,
+    yoyo: true
+})
